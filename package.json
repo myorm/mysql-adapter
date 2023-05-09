@@ -1,6 +1,9 @@
 {
     "type":"module",
-  "dependencies": {
-    "mysql2": "^3.2.4"
-  }
+    "scripts": {
+        "test": "node ./lib/tests/test.js"
+    },
+    "dependencies": {
+        "mysql2": "^3.2.4"
+    }
 }

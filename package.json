@@ -1,9 +1,57 @@
 {
-    "type":"module",
-    "scripts": {
-        "test": "node ./lib/tests/test.js"
+    "name": "@myorm/mysql-adapter",
+    "version": "0.0.1",
+    "homepage": "https://github.com/myorm/mysql-adapter",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/myorm/mysql-adapter"
     },
+    "description": "Adapter for MyORM that works for MySQL databases.",
+    "type":"module",
+	"main": "./dist/cjs/adapter.js",
+	"module": "./dist/esm/adapter.js",
+	"types": "./dist/esm/types/adapter.d.ts",
+    "scripts": {
+        "clean": "",
+        "build": "",
+        "build:esm": "",
+        "build:cjs": "",
+        "test": "node ./lib/tests/test.js",
+        "prepack": "npm run build"
+    },
+    "keywords": [
+        "myorm",
+        "mysql",
+        "typescript",
+        "table",
+        "left join",
+        "query",
+        "insert",
+        "update",
+        "delete"
+    ],
+    "author": "Travis Zuleger",
+    "license": "(MIT OR Apache-2.0)",
     "dependencies": {
         "mysql2": "^3.2.4"
+    },
+    "devDependencies": {
+        "typescript": "^4.9.4"
+    },
+    "files": [
+        "dist/**/*"
+    ],
+    "exports": {
+        ".": {
+            "import": {
+				"types": "./dist/esm/types/adapter.d.ts",
+				"default": "./dist/esm/adapter.js"
+            },
+            "require": {
+				"types": "./dist/cjs/types/adapter.d.ts",
+				"default": "./dist/cjs/adapter.js"
+
+            }
+        }
     }
 }

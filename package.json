@@ -12,10 +12,10 @@
     "module": "./dist/esm/adapter.js",
     "types": "./dist/esm/types/adapter.d.ts",
     "scripts": {
-        "clean": "",
-        "build": "",
-        "build:esm": "",
-        "build:cjs": "",
+        "clean": "del /S /Q .\\dist",
+        "build": "npm run clean && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc -p ./configs/tsconfig.esm.json",
+        "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
         "test": "node ./lib/tests/test.js",
         "prepack": "npm run build"
     },
